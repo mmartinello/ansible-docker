@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Mattia Martinello
+  description: Install Docker
+  company: Mattia Martinello
+
+  license: BSD
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+      - 9
+      - 10
+
+  galaxy_tags:
+    - debian
+    - docker
+
+  dependencies: []

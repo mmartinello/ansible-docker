@@ -1,0 +1,11 @@
+---
+# APT Distributions (in lower case!)
+apt_distros:
+  - debian
+  - ubuntu
+
+# Install Docker CE CLI
+install_docker_ce_cli: false
+
+# Install containerd.io
+install_containerd_io: false
