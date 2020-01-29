@@ -16,9 +16,9 @@
 
 - name: Add Docker APT Repository
   apt_repository:
-    repo: deb deb [arch=amd64] https://download.docker.com/linux/{{ ansible_os_family | lower }}/{{ ansible_distribution_release | lower }} stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/{{ ansible_os_family | lower }} {{ ansible_distribution_release | lower }} stable
     state: present
-    filename: debian-backports
+    filename: docker
 
 - name: Install Docker CE
   apt:
