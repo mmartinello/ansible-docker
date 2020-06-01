@@ -11,5 +11,8 @@ required_pip_packages:
 # Install Docker CE CLI
 install_docker_ce_cli: false
 
+# Install Docker compose
+install_docker_compose: true
+
 # Install containerd.io
 install_containerd_io: false

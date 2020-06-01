@@ -33,6 +33,12 @@
     state: present
   when: install_docker_ce_cli == true
 
+- name: Install Docker Compose
+  apt:
+    name: docker-compose
+    state: present
+  when: install_docker_compose == true
+
 - name: Install containerd.io
   apt:
     name: containerd.io
