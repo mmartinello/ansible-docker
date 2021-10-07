@@ -1,18 +1,12 @@
 ---
 # APT Distributions (in lower case!)
-apt_distros:
+docker_apt_distros:
   - debian
   - ubuntu
 
 # Required PIP Packages
-required_pip_packages:
+docker_required_pip_packages:
   - docker
 
-# Install Docker CE CLI
-install_docker_ce_cli: false
-
 # Install Docker compose
-install_docker_compose: true
-
-# Install containerd.io
-install_containerd_io: false
+docker_compose_install: true

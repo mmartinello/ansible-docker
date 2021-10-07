@@ -26,21 +26,3 @@
   apt:
     name: docker-ce
     state: present
-
-- name: Install Docker CE
-  apt:
-    name: docker-ce-cli
-    state: present
-  when: install_docker_ce_cli == true
-
-- name: Install Docker Compose
-  apt:
-    name: docker-compose
-    state: present
-  when: install_docker_compose == true
-
-- name: Install containerd.io
-  apt:
-    name: containerd.io
-    state: present
-  when: install_containerd_io == true

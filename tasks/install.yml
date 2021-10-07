@@ -1,14 +1,14 @@
 ---
 - include_tasks: install-Debian.yml
-  when: ansible_os_family | lower in apt_distros
+  when: ansible_os_family | lower in docker_apt_distros
 
 - name: Install Docker PIP package
   pip:
     name: docker
     state: present
 
-- name: Install Docker Compose PIP package
+- name: Install Docker Compose
   pip:
     name: docker-compose
     state: present
-  when: install_docker_compose == true
+  when: docker_compose_install
