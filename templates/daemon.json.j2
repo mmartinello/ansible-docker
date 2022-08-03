@@ -1,0 +1,12 @@
+{
+{% if docker_default_address_pools is defined and docker_default_address_pools | length > 0 %}
+  "default-address-pools" : [
+{% for pool in docker_default_address_pools %}
+    {
+      "base" : "{% pool.base %}",
+      "size" : {% pool.size %}
+    }
+{% endfor %}
+  ]
+{% endif %}
+}

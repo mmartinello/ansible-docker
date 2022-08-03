@@ -10,3 +10,8 @@ docker_required_pip_packages:
 
 # Install Docker compose
 docker_compose_install: true
+
+# Default address pools
+docker_default_address_pools:
+  - base: "172.240.0.0/16"
+    size: 24
