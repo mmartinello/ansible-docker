@@ -27,3 +27,8 @@
   apt:
     name: docker-ce
     state: present
+
+- name: Install Docker Compose
+  apt:
+    name: docker-compose
+  when: docker_compose_install and not docker_compose_install_from_pip
