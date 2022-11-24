@@ -9,6 +9,7 @@
       - software-properties-common
       - python3-pip
       - pass
+      - libffi-dev
     state: present
 
 - name: Add Docker’s official GPG key
