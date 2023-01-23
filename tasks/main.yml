@@ -2,3 +2,9 @@
 - include_tasks: install.yml
 
 - include_tasks: configure.yml
+
+- name: Ensure that Docker Daemon is started and enabled on boot
+  service:
+    name: docker.service
+    state: started
+    enabled: "{{ docker_enable_on_boot }}"

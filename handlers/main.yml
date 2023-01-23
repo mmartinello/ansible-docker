@@ -1,2 +1,5 @@
 ---
-# handlers file for mmartinello.docker
+- name: Restart Docker Service
+  service:
+    name: docker.service
+    state: reloaded
