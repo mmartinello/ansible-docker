@@ -1,6 +1,6 @@
 ---
 - name: Load OS specific variables
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   tags:
     - always
     - install
@@ -8,13 +8,16 @@
     - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
+    - default.yml
 
-- include_tasks: install.yml
+- name: Install Docker
+  ansible.builtin.include_tasks: install.yml
 
-- include_tasks: configure.yml
+- name: Configure Docker
+  ansible.builtin.include_tasks: configure.yml
 
 - name: Ensure that Docker Daemon is started and enabled on boot
-  service:
+  ansible.builtin.service:
     name: docker.service
     state: started
     enabled: "{{ docker_enable_on_boot }}"

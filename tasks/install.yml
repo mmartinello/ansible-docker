@@ -1,14 +1,15 @@
 ---
-- include_tasks: install-Debian.yml
+- name: Install on Debian
+  ansible.builtin.include_tasks: install-Debian.yml
   when: ansible_os_family | lower in docker_apt_distros
 
 - name: Install Docker PIP package
-  pip:
+  ansible.builtin.pip:
     name: docker
     state: present
 
 - name: Install Docker Compose
-  pip:
+  ansible.builtin.pip:
     name: docker-compose
     state: present
   when: docker_compose_install and docker_compose_install_from_pip
