@@ -7,9 +7,3 @@
   ansible.builtin.pip:
     name: docker
     state: present
-
-- name: Install Docker Compose
-  ansible.builtin.pip:
-    name: docker-compose
-    state: present
-  when: docker_compose_install and docker_compose_install_from_pip

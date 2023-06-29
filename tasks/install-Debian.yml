@@ -30,5 +30,5 @@
 
 - name: Install Docker Compose
   ansible.builtin.apt:
-    name: docker-compose
-  when: docker_compose_install and not docker_compose_install_from_pip
+    name: docker-compose-plugin
+  when: docker_compose_install
