@@ -2,8 +2,3 @@
 - name: Install on Debian
   ansible.builtin.include_tasks: install-Debian.yml
   when: ansible_os_family | lower in docker_apt_distros
-
-- name: Install Docker PIP package
-  ansible.builtin.pip:
-    name: docker
-    state: present
