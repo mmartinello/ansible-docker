@@ -15,7 +15,7 @@ docker_compose_install: true
 docker_compose_install_from_pip: false
 
 # Default log driver
-docker_default_log_driver: local
+docker_default_log_driver: json-file
 
 # Default address pools
 docker_default_address_pools:
