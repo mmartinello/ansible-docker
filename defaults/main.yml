@@ -14,6 +14,9 @@ docker_compose_install: true
 # Install Docker Compose from PIP (even it will be installed from repository)
 docker_compose_install_from_pip: false
 
+# Default log driver
+docker_default_log_driver: local
+
 # Default address pools
 docker_default_address_pools:
   - base: "172.240.0.0/16"

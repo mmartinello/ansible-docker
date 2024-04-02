@@ -1,4 +1,5 @@
 {
+  "log-driver": "{{ docker_default_log_driver | default('json-file') }}",
 {% if docker_default_address_pools is defined and docker_default_address_pools | length > 0 %}
   "default-address-pools" : [
 {% for pool in docker_default_address_pools %}
