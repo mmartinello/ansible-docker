@@ -24,3 +24,6 @@ docker_default_address_pools:
 
 # Enable and start Docker Service on boot
 docker_enable_on_boot: true
+
+# Enable the daily prune cronjob
+docker_prune_cronjob: true

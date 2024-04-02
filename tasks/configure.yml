@@ -7,3 +7,12 @@
     owner: root
     group: root
   notify: Restart Docker Service
+
+- name: Add prune cronjob
+  ansible.builtin.cron:
+    name: docker prune
+    user: root
+    special_time: daily
+    job: docker system prune -a -f
+    state: present
+  when: docker_prune_cronjob
