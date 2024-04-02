@@ -13,6 +13,7 @@
     name: docker prune
     user: root
     special_time: daily
+    cron_file: docker
     job: docker system prune -a -f
     state: present
   when: docker_prune_cronjob
