@@ -13,14 +13,15 @@
       - python3-docker
     state: present
 
-- name: Add Docker’s official GPG key
-  ansible.builtin.apt_key:
+- name: Download Docker’s official GPG key
+  ansible.builtin.get_url:
     url: https://download.docker.com/linux/{{ ansible_os_family | lower }}/gpg
-    state: present
+    dest: /etc/apt/keyrings/docker.asc
+    mode: "0644"
 
 - name: Add Docker APT Repository
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/{{ ansible_os_family | lower }} {{ ansible_distribution_release | lower }} stable
+    repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/{{ ansible_os_family | lower }} {{ ansible_distribution_release | lower }} stable
     state: present
     filename: docker
 
